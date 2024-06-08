@@ -1,13 +1,26 @@
 function MergeSort(array) {
   if (array.length == 1) {
-    return array[0];
+    return array;
   }
   let mid = Math.floor(array.length / 2);
   let right = array.slice(0, mid);
   let left = array.slice(mid, array.length);
-  console.log(right);
-  console.log(left);
-  MergeSort(right);
-  MergeSort(left);
+  right = MergeSort(right);
+  left = MergeSort(left);
+  return MergeArray(right, left);
 }
-MergeSort([2, 5, 6, 3, 5, 6, 7]);
+
+function MergeArray(array1, array2) {
+  let sortedArray = [];
+  while (array1.length || array2.length) {
+    if (!array2.length || array1[0] < array2[0]) {
+      sortedArray.push(array1.shift());
+    } else {
+      sortedArray.push(array2.shift());
+    }
+  }
+  return sortedArray;
+}
+
+let testArray = [2, 1, 33, 1];
+console.log("sorted array:" + MergeSort(testArray));
