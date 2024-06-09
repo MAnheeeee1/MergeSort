@@ -22,5 +22,12 @@ function MergeArray(array1, array2) {
   return sortedArray;
 }
 
-let testArray = [2, 1, 33, 1];
-console.log("sorted array:" + MergeSort(testArray));
+let unsortedlist = document.querySelector("input");
+let submitBtn = document.querySelector("button");
+let sortedList = document.getElementById("result");
+submitBtn.onclick = (event) => {
+  event.preventDefault();
+  let unsortedlistArray = unsortedlist.value.split(",");
+  let sortedlistArray = MergeSort(unsortedlistArray);
+  alert(sortedlistArray);
+};
