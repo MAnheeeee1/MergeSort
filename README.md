@@ -1,0 +1,1 @@
+I build a website that allows a user to input a unsortedlist and returns a sortedlist, this was made possiable by creating a mergesort algortihm that leverage the divide and conquer design pattern and recurison.
